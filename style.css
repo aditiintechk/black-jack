@@ -4,6 +4,8 @@ body {
     background-image: url(./images/table.png);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    overflow: hidden;
     color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
@@ -16,4 +18,16 @@ h1 {
 
 #message-el {
     font-style: italic;
+}
+
+.start-btn {
+    color: #016f32;
+    width: 14rem;
+    height: 2.5rem;
+    background: goldenrod;
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
 }
