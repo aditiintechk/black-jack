@@ -20,7 +20,13 @@ h1 {
     font-style: italic;
 }
 
-.start-btn {
+div {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    gap: 5px; 
+}
+
+button {
     color: #016f32;
     width: 14rem;
     height: 2.5rem;
