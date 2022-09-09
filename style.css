@@ -20,6 +20,7 @@ h1 {
     font-style: italic;
 }
 
+/* to center the grid --> make it inline-grid! */
 div {
     display: inline-grid;
     grid-template-columns: 1fr;
