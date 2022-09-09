@@ -1,12 +1,11 @@
-let firstCard = getRandomCard();
-let secondCard = getRandomCard();
- 
-let cards = [firstCard, secondCard];
 
-let sum = firstCard + secondCard;
+ 
+let cards = [];
+
+let sum = 0;
 
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 
 let message = "";
 
@@ -15,10 +14,22 @@ const sumEle = document.querySelector("#sum-el");
 const cardEle = document.getElementById("card-el");
 
 function getRandomCard() {
-    return Math.floor(Math.random() * 13) + 1;
-}
+    let randomCard = Math.floor(Math.random() * 13) + 1;
+    if(randomCard === 1) return 11;
+    else if(randomCard > 10) return 10;
+    else return randomCard; 
+} 
 
 function startGame() {
+    isAlive = true;
+
+    let firstCard = getRandomCard();
+    let secondCard = getRandomCard();
+
+    cards.push(firstCard);
+    cards.push(secondCard);
+    sum = firstCard + secondCard;
+
     renderGame();
 }
 
@@ -44,8 +55,10 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = getRandomCard();
-    sum += card;
-    cards.push(card);
-    renderGame();
+    if(isAlive && !hasBlackJack) {
+        let card = getRandomCard();
+        sum += card;
+        cards.push(card);
+        renderGame();
+    }
 }
