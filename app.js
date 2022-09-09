@@ -1,6 +1,9 @@
 let firstCard = 10;
 let secondCard = 8;
 
+// define an array to store cards - 
+let cards = [firstCard, secondCard];
+
 let sum = firstCard + secondCard;
 
 let hasBlackJack = false;
@@ -12,8 +15,7 @@ let message = "";
 const messageEle = document.getElementById("message-el");
 
 // 2. store sum-el & card-el in a variable
-
-// more dynamic - broader expression
+// query selector - more dynamic - broader expression
 const sumEle = document.querySelector("#sum-el");
 const cardEle = document.getElementById("card-el");
 
@@ -22,7 +24,12 @@ function startGame() {
 }
 
 function renderGame() {
-    cardEle.textContent = "Cards: " + firstCard + " " + secondCard;
+    cardEle.textContent = "Cards: ";
+    // For loop to render all cards 
+    for(let i = 0; i < cards.length; i++) {
+        cardEle.textContent += cards[i] + " ";
+    }
+    
     sumEle.textContent = "Sum: " + sum;
 
     if(sum <= 20) {
@@ -40,5 +47,6 @@ function renderGame() {
 function newCard() {
     let card = 3;
     sum += card;
+    cards.push(card);
     renderGame();
 }
