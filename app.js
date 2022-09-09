@@ -1,7 +1,6 @@
-let firstCard = 10;
-let secondCard = 8;
-
-// define an array to store cards - 
+let firstCard = getRandomCard();
+let secondCard = getRandomCard();
+ 
 let cards = [firstCard, secondCard];
 
 let sum = firstCard + secondCard;
@@ -11,13 +10,13 @@ let isAlive = true;
 
 let message = "";
 
-// 1. store message-el in a variable
 const messageEle = document.getElementById("message-el");
-
-// 2. store sum-el & card-el in a variable
-// query selector - more dynamic - broader expression
 const sumEle = document.querySelector("#sum-el");
 const cardEle = document.getElementById("card-el");
+
+function getRandomCard() {
+    return Math.floor(Math.random() * 13) + 1;
+}
 
 function startGame() {
     renderGame();
@@ -45,7 +44,7 @@ function renderGame() {
 }
 
 function newCard() {
-    let card = 3;
+    let card = getRandomCard();
     sum += card;
     cards.push(card);
     renderGame();
