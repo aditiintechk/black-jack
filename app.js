@@ -1,5 +1,5 @@
 let firstCard = 10;
-let secondCard = 11;
+let secondCard = 8;
 
 let sum = firstCard + secondCard;
 
@@ -34,5 +34,7 @@ function startGame() {
 }
 
 function newCard() {
-    console.log("Do you wanna draw a new card?")
+    let card = 3;
+    sum += card;
+    startGame();
 }
