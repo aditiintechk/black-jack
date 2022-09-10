@@ -1,5 +1,5 @@
+// Declaration of variabeles
 let cards = [];
-
 let sum = 0;
 
 let hasBlackJack = false;
@@ -11,13 +11,16 @@ let player = {
     chips: 145
 }
 
+// Defining Target elements
 const messageEle = document.getElementById("message-el");
 const sumEle = document.querySelector("#sum-el");
 const cardEle = document.getElementById("card-el");
 let playerEle = document.getElementById("player-el");
 
+// Display player Info
 playerEle.textContent = player.name + ": $" + player.chips;
 
+// Function to get a random card
 function getRandomCard() {
     let randomCard = Math.floor(Math.random() * 13) + 1;
     if(randomCard === 1) return 11;
@@ -25,6 +28,7 @@ function getRandomCard() {
     else return randomCard; 
 } 
 
+// function to start the game
 function startGame() {
     isAlive = true;
 
@@ -38,6 +42,7 @@ function startGame() {
     renderGame();
 }
 
+// render the game and display the cards
 function renderGame() {
     cardEle.textContent = "Cards: ";
     // For loop to render all cards 
@@ -59,6 +64,7 @@ function renderGame() {
     messageEle.textContent = message;
 }
 
+// new card function feature
 function newCard() {
     if(isAlive && !hasBlackJack) {
         let card = getRandomCard();
