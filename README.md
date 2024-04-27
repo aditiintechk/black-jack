@@ -6,4 +6,4 @@
 - JavaScript
 
 ### Webpage URL
-[BlackJack Game](https://aditi002-holo.github.io/black-jack/)
+[BlackJack Game](https://aditiintechk.github.io/black-jack/)
